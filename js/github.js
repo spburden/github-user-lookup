@@ -36,13 +36,17 @@ User.prototype.getRepos = function(username) {
 User.prototype.getInfo = function (username) {
   $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response){
     if(response){
-      $("#avatar").attr("src", response.avatar_url);
-      $("#avatar").show();
-      $("#followers").append("Followers: " + response.followers);
-      $("#following").append("Following: " + response.following + "<br>");
-    }
-    if(response.name){
-      $("#nameOfUser").append(response.name);
+      if(response.followers){
+        $("#followers").append("Followers: " + response.followers);
+        $("#following").append("Following: " + response.following + "<br>");
+      }
+      if(response.avatar_url){
+        $("#avatar").attr("src", response.avatar_url);
+        $("#avatar").show();
+      }
+      if(response.name){
+        $("#nameOfUser").append(response.name);
+      }
     }
   });
 };

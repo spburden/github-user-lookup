@@ -5,7 +5,9 @@ $(document).ready(function(){
   $("form").submit(function(event){
     event.preventDefault();
     $(".jumbotron").hide();
+    $("#inputUsername").empty();
     $(".username").empty();
+    $(".result").empty();
     $("#nameOfUser").empty();
     $("#followers").empty();
     $("#following").empty();
