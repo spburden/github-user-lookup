@@ -21,7 +21,9 @@
 ## Setup/Installation Requirements
 * _Clone the repository from the link below to your desktop_
 * _From the project directory enter the following commands in Terminal to install the required dependencies: "npm install", followed by: "bower install"_
-* _In the project directory create a .env file containing: exports.apiKey = "YOUR_PERSONAL_GITHUB_API_TOKEN_KEY / LEAVE BLANK IF YOU DO NOT HAVE ONE";_
+* _In the project directory and create a .env file containing: exports.apiKey = "";_
+* _If you have a GitHub API key insert it between the quotes._
+   * _Limited access: Only 60 requests allowed per hour without a key_
 * _To view webpage: from the project directory enter the command: "gulp serve"_
 
 ## Link
