@@ -14,7 +14,7 @@
 | Display a message if the user does not have a description of one of their Public Repositories | "daneden"  | Repo Name: processing-rotator, Date created: Monday Oct 10th 2016 |
 | Display the creation date of user's Public Repositories | "daneden"  | Repo Name: processing-rotator, No Description |
 | Display user's GitHub Avatar | "daneden"  | An image of daneden's avatar |
-
+| Display user's Full Name if available | "das"  | Daniel A. Steffen |
 
 ## Setup/Installation Requirements
 * _Clone the repository from the link below to your desktop_

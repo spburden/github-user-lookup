@@ -5,13 +5,16 @@ $(document).ready(function(){
   $("form").submit(function(event){
     event.preventDefault();
     $(".jumbotron").hide();
+    $(".username").empty();
+    $("#nameOfUser").empty();
+    $("#followers").empty();
+    $("#following").empty();
+    $("#avatar").attr("src", '');
     var username = $("#username").val();
     var newUser = new User();
-    $(".username").empty();
-    $(".result").empty();
-    $("#username").val("");
     newUser.getRepos(username);
     $(".jumbotron").show();
     newUser.getName(username);
+    $("#username").val("");
   });
 });
