@@ -9,7 +9,6 @@ User.prototype.getRepos = function(username) {
     console.log(response);
     if(response.length){
       if (response.length > 1) {
-        alert(username);
         $(".username").text(username + "'s " + response.length + " Public Repositories:");
       } else {
         $(".username").text(username + "'s Public Repository:");
@@ -17,10 +16,11 @@ User.prototype.getRepos = function(username) {
       for (var i = 0; i < response.length; i++) {
         $(".result").append("<h4>Repo Name: " + response[i].name + "</h4>");
         if (response[i].description) {
-          $(".result").append("<h5>Description: " + response[i].description + "</h5><br>");
+          $(".result").append("<h5>Description: " + response[i].description + "</h5>");
         } else {
-          $(".result").append("<h6>No Description</h6><br>");
+          $(".result").append("<h6>No Description</h6>");
         }
+        $(".result").append("<h5>Date created: " + moment(response[i].created_at).format("dddd MMM Do YYYY") + "</h5><br>");
       }
     } else {
       $(".username").text(username + " does not have any Public Repositories yet!");
