@@ -9,6 +9,11 @@
 | --- | --- | --- |
 | Search for a User and display their all their Public Repository Names  | "daneden"  |  Repo Name: eloquent-js |
 | Search for a User and display their all their Public Repository Descriptions   | "daneden"  | Description: My playground for going through the exercises in the book “Eloquent JavaScript” |
+| Display if user does not exist | "1a2s3d"  | 1a2s3d was not found! Try Again! |
+| Display if user does not have any Public Repositories | "qwerty"  | qwerty does not have any Public Repositories yet! |
+| Display a message if the user does not have a description of one of their Public Repositories | "daneden"  | Repo Name: processing-rotator, Date created: Monday Oct 10th 2016 |
+| Display the creation date of user's Public Repositories | "daneden"  | Repo Name: processing-rotator, No Description |
+| Display user's GitHub Avatar | "daneden"  | An image of daneden avatar |
 
 
 ## Setup/Installation Requirements
