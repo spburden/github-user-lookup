@@ -13,12 +13,12 @@
 | Display if user does not have any Public Repositories | "qwerty"  | qwerty does not have any Public Repositories yet! |
 | Display a message if the user does not have a description of one of their Public Repositories | "daneden"  | Repo Name: processing-rotator, Date created: Monday Oct 10th 2016 |
 | Display the creation date of user's Public Repositories | "daneden"  | Repo Name: processing-rotator, No Description |
-| Display user's GitHub Avatar | "daneden"  | An image of daneden avatar |
+| Display user's GitHub Avatar | "daneden"  | An image of daneden's avatar |
 
 
 ## Setup/Installation Requirements
 * _Clone the repository from the link below to your desktop_
-* _To browse the website open index.html in the browser of your choosing_
+* _Open index.html in the browser of your choosing_
 
 ## Link
 https://github.com/spburden/github-user-lookup
