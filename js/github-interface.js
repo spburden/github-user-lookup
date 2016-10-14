@@ -13,7 +13,7 @@ $(document).ready(function(){
     $("#avatar").attr("src", '');
     var username = $("#username").val();
     var newUser = new User();
-    newUser.getRepos(username, displayUserRepos);
+    newUser.getRepos(username, displayUserRepos, noRepos);
     newUser.getInfo(username, displayUserInfo);
     $(".jumbotron").show();
     $("#username").val("");
@@ -40,6 +40,11 @@ var displayUserRepos = function(username, response) {
   } else {
     $(".username").text(username + " does not have any Public Repositories yet!");
   }
+};
+
+var noRepos = function(username){
+  $(".username").text(username + " was not found!");
+  $(".result").append("Try Again!");
 };
 
 var displayUserInfo = function(username, response) {
