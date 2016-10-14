@@ -8,7 +8,7 @@ $(document).ready(function(){
     $(".result").empty();
     var username = $("#username").val();
     $("#username").val("");
-    $.get('https://api.github.com/users/' + username + '/repos?page=1?access_token=' + apiKey).then(function(response){
+    $.get('https://api.github.com/users/' + username + '/repos?sort=created&per_page=200&access_token=' + apiKey).then(function(response){
       console.log(response);
       if(response.length){
         if (response.length > 1) {
