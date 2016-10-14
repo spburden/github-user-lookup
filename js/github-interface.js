@@ -5,24 +5,27 @@ $(document).ready(function(){
   $("form").submit(function(event){
     event.preventDefault();
     $(".username").empty();
+    $(".result").empty();
     var username = $("#username").val();
     $("#username").val("");
     $.get('https://api.github.com/users/' + username + '/repos?access_token=' + apiKey).then(function(response){
-      $(".jumbotron").show();
-      $(".username").text(username + "'s Public Repositories:");
-      console.log(response);
-      console.log(response[17].name);
-      console.log(response[17].description);
-      for (var i = 0; i < response.length; i++) {
-        $(".result").append("<h4>Repo Name: " + response[i].name + "</h4>");
-        if (response[i].description !== null) {
-          $(".result").append("<h5>Description: " + response[i].description + "</h5><br>");
-        } else {
-          $(".result").append("<h5>No Description</h5><br>");
+      if(response.length){
+        $(".username").text(username + "'s Public Repositories:");
+        for (var i = 0; i < response.length; i++) {
+          $(".result").append("<h4>Repo Name: " + response[i].name + "</h4>");
+          if (response[i].description) {
+            $(".result").append("<h5>Description: " + response[i].description + "</h5><br>");
+          } else {
+            $(".result").append("<h6>No Description</h6><br>");
+          }
         }
+      } else {
+        $(".username").text(username + " does not have any Public Repositories yet!");
       }
     }).fail(function(error){
       console.log(error.responseJSON.message);
+      $(".username").text(username + " was not found!");
+      $(".result").append("Try Again!");
     });
   });
 });
