@@ -23,7 +23,7 @@ $(document).ready(function(){
 var displayUserRepos = function(username, response) {
   if(response.length){
     if (response.length > 1) {
-      $("#inputUsername").html("<h2>" + username + "</h2>");
+      $("#inputUsername").html("<a href='https://github.com/" + username + "'><h2>" + username + "</h2></a>");
       $(".username").append(username + "'s " + response.length + " Public Repositories:");
     } else {
       $(".username").append(username + "'s Public Repository:");
@@ -38,7 +38,7 @@ var displayUserRepos = function(username, response) {
       $(".result").append("<h5>Date created: " + moment(response[i].created_at).format("dddd MMM Do YYYY") + "</h5><br>");
     }
   } else {
-    $(".username").text(username + " does not have any Public Repositories yet!");
+    $(".username").html("<h2><a href='https://github.com/" + username + "'>" + username + "</a> does not have any Public Repositories yet!</h2>");
   }
 };
 
