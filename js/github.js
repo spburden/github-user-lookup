@@ -10,8 +10,6 @@ User.prototype.getRepos = function(username) {
     if(response.length){
       if (response.length > 1) {
         $("#inputUsername").html("<h2>" + username + "</h2>");
-        $("#avatar").attr("src", response[0].owner.avatar_url);
-        $("#avatar").show();
         $(".username").append(username + "'s " + response.length + " Public Repositories:");
       } else {
         $(".username").append(username + "'s Public Repository:");
@@ -35,12 +33,16 @@ User.prototype.getRepos = function(username) {
   });
 };
 
-User.prototype.getName = function (username) {
+User.prototype.getInfo = function (username) {
   $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response){
-    if(response.name){
-      $("#nameOfUser").append(response.name);
+    if(response){
+      $("#avatar").attr("src", response.avatar_url);
+      $("#avatar").show();
       $("#followers").append("Followers: " + response.followers);
       $("#following").append("Following: " + response.following + "<br>");
+    }
+    if(response.name){
+      $("#nameOfUser").append(response.name);
     }
   });
 };

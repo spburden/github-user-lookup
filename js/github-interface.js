@@ -13,8 +13,8 @@ $(document).ready(function(){
     var username = $("#username").val();
     var newUser = new User();
     newUser.getRepos(username);
+    newUser.getInfo(username);
     $(".jumbotron").show();
-    newUser.getName(username);
     $("#username").val("");
   });
 });
