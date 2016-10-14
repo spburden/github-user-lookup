@@ -10,7 +10,7 @@ User.prototype.getRepos = function(username) {
     if(response.length){
       if (response.length > 1) {
         $(".username").append("<h2>" + username + "</h2>");
-        $(".username").append("<img src=" + response[0].owner.avatar_url + "alt='Users Github Avatar'><br><br>");
+        $(".username").append("<img src=" + response[0].owner.avatar_url + "alt='Users Github Avatar'><h3 id='nameOfUser'></h3>");
         $(".username").append(username + "'s " + response.length + " Public Repositories:");
       } else {
         $(".username").append(username + "'s Public Repository:");
@@ -31,6 +31,14 @@ User.prototype.getRepos = function(username) {
     console.log(error.responseJSON.message);
     $(".username").text(username + " was not found!");
     $(".result").append("Try Again!");
+  });
+};
+
+User.prototype.getName = function (username) {
+  $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response){
+    if(response.name){
+      $("#nameOfUser").append(response.name + "<br>");
+    }
   });
 };
 
