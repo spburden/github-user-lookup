@@ -9,9 +9,11 @@ User.prototype.getRepos = function(username) {
     console.log(response);
     if(response.length){
       if (response.length > 1) {
-        $(".username").text(username + "'s " + response.length + " Public Repositories:");
+        $(".username").append("<h2>" + username + "</h2>");
+        $(".username").append("<img src=" + response[0].owner.avatar_url + "alt='Users Github Avatar'><br><br>");
+        $(".username").append(username + "'s " + response.length + " Public Repositories:");
       } else {
-        $(".username").text(username + "'s Public Repository:");
+        $(".username").append(username + "'s Public Repository:");
       }
       for (var i = 0; i < response.length; i++) {
         $(".result").append("<h4>Repo Name: " + response[i].name + "</h4>");
