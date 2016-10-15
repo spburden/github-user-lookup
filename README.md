@@ -36,7 +36,7 @@ _There are no known bugs with this application._
 _spburden@hotmail.com_
 
 ## Technologies Used
-_JavaScript, JQuery, Node, Bower, Gulp, Sass, Moment, HTML, CSS, and Bootstrap_
+_JavaScript, JQuery, Node, npm, Bower, Gulp, Sass, Moment, HTML, CSS, and Bootstrap_
 
 ### License
 The MIT License (MIT)

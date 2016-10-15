@@ -43,6 +43,7 @@ var displayUserRepos = function(username, response) {
 };
 
 var noRepos = function(username){
+  $("#avatar").hide();
   $(".username").text(username + " was not found!");
   $(".result").append("Try Again!");
 };
